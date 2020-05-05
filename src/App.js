@@ -15,8 +15,8 @@ import Menu from "./components/Menu";
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import Recipes from "./components/Recipes";
-import AddSeller from "./components/AddSeller";
 import RegisterBusinessUser from "./components/RegisterBusinessUser";
+import ChangePassword from "./components/ChangePassword";
 
 
 const history = createBrowserHistory({basename: GetBaseRoute()});
@@ -46,6 +46,7 @@ const App = () => {
                         <AppRoute exact path="/register" layout={Register} component={Register}/>
                         <AppRoute exact path="/registerBusinessUser" layout={RegisterBusinessUser} component={RegisterBusinessUser}/>
                         <AppRoute exact path="/contactus" layout={ContactUs} component={ContactUs}/>
+                        <AppRoute exact path="/changePassword" layout={ChangePassword} component={ChangePassword}/>
                     </Switch>
             </Suspense>
         </Router>
