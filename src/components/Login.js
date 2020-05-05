@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import showNotification from "../utilis/Notifications";
 import {postData} from "../services/Ajax";
+import {setCookie} from "../services/CookieService";
+const cuser = "currentUser";
 
 const goToRegisterPage = (props) => {
     return (
@@ -27,8 +29,10 @@ const Login = (props) => {
         const response = await postData("/api/user/login", data);
         const result = await response.json();
         if (response.status === 200) {
-            props.history.push("/home")
+            setCookie(cuser,data.userName )
             showNotification("Login Successful", result.message, "success")
+            props.history.push("/home")
+            window.location.reload()
         } else {
             showNotification("Error", result.message, "danger")
         }
