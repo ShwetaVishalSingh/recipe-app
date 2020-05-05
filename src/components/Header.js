@@ -53,6 +53,9 @@ const Header = (props) => {
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/contactus")
                                         }}>Contact us</a></li>
+                                        <li><a href="#" onClick={() => {
+                                            GoToPage(props,"/changePassword")
+                                        }}>Change Password</a></li>
 
                                     </ul>
                                 </div>
