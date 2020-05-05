@@ -56,6 +56,12 @@ const Header = (props) => {
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/changePassword")
                                         }}>Change Password</a></li>
+                                        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                                        <li>
+                                            <a href="#" onClick={() => {
+                                                GoToPage(props,"/logout")
+                                            }}><img src="images/my-profile.png" alt=""/></a>
+                                        </li>
 
                                     </ul>
                                 </div>
