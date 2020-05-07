@@ -6,18 +6,18 @@ import AddSeller from "./AddSeller";
 
 
 const RegisterBusinessUser = (props) => {
-    const [data, setData] = useState({userName: "", password: "",confirmPassword:"", firstName: {}, lastName: {}, phoneNumber: {}});
+    const [data, setData] = useState({userName: "", password: "",confirmPassword:"",customerType: "SELLER", firstName: {}, lastName: {}, phoneNumber: {}});
     const [nextStage, setNextStage] = useState(false);
 
     const handlePostData = async (event) => {
         event.preventDefault();
-        const response = await postData("/api/user/register/seller", data);
+        const response = await postData("/api/user/register/", data);
+        const result = await response.json();
         if (response.status === 200) {
-            const result = await response.json();
             setNextStage(true);
             setData(result);
         } else {
-            showNotification("Error!", "Seems like you are missing some required details or you are not providing valid details.", "danger");
+            showNotification("Error!", result.errorMessage, "danger");
         }
     };
 
@@ -81,6 +81,7 @@ const RegisterBusinessUser = (props) => {
                                             <div className="form-box">
                                                 <input type="text" onChange={handleInputChange} name="firstName"
                                                        id="firstName"
+                                                       required="required"
                                                        placeholder="First Name" data-error="First name is required."/>
                                             </div>
                                         </div>
@@ -88,6 +89,7 @@ const RegisterBusinessUser = (props) => {
                                             <div className="form-box">
                                                 <input type="text" onChange={handleInputChange} name="lastName"
                                                        id="lastName"
+                                                       required="required"
                                                        placeholder="Last Name"
                                                        required="required" data-error="Last name is required."/>
                                             </div>
