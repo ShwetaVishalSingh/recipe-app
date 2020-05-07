@@ -1,20 +1,40 @@
-import React, {useState} from 'react'
-import {postData} from "../services/Ajax";
+import React, {useEffect, useState} from 'react';
 import showNotification from "../utilis/Notifications";
-import './Register.css'
+import {getData, postData} from "../services/Ajax";
+import ChangePassword from "./ChangePassword";
+
+const goToChangePassword = (props) => {
+    return (
+        props.history.push("/changePassword")
+    );
+};
+
+const User = (props) => {
+    const [data, setData] = useState([]);
 
 
-const Register = (props) => {
-    const [data, setData] = useState({userName: "", password: "", confirmPassword:"", customerType: "CUSTOMER", firstName: {}, lastName: {}, phoneNumber: {}});
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getData(
+                '/api/user/fd86071a-fb30-4078-b53f-f545ac7119d4'
+            );
+            const result = await response;
+            setData(result);
+            console.log(response)
+        };
+        fetchData();
+    }, []);
 
     const handlePostData = async (event) => {
         event.preventDefault();
-        const response = await postData("/api/user/register", data);
-        const result = await response.json();
+        const response = await postData("/api/user", data);
         if (response.status === 200) {
+            const result = await response.json();
             props.history.push("/");
-            showNotification("User.js Registered!", "Welcome! " + result.firstName + " " + result.lastName, "success");
+            showNotification("Success", result.message, "success");
         } else {
+            const result = await response.json();
+
             showNotification("Error!", result.errorMessage, "danger");
         }
     };
@@ -27,9 +47,6 @@ const Register = (props) => {
         return true;
     };
 
-    const registerAsSeller = () => {
-      props.history.push("/registerBusinessUser")
-    };
 
     return (
         <div id="signIn" className="banner full-screen-mode parallax">
@@ -40,70 +57,72 @@ const Register = (props) => {
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                                     <h2 className="block-title text-center">
-                                        SIGN UP
+                                        USER PROFILE
                                     </h2>
                                 </div>
 
-                                <p>PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS!</p>
+                                <p>USER DETAILS</p>
 
                                 <form onSubmit={handlePostData} className="reservations-box"
-                                      name="registrationForm">
+                                      name="User">
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <input type="email" onChange={handleInputChange} name="userName"
                                                    id="userName"
+                                                   value={data.userName}
                                                    placeholder="E-Mail ID"
                                                    required="required" data-error="E-mail id is required."/>
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <input type="text" onChange={handleInputChange} name="phoneNumber"
-                                                   id="phoneNumber" placeholder="Phone"
-                                                   required="required" data-error="Phone is required."/>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="form-box">
-                                            <input type="password" onChange={handleInputChange} name="password"
-                                                   id="password" placeholder="Password"
+                                            <input type="text" onChange={handleInputChange} name="firstName"
+                                                   id="password"
+                                                   value={data.firstName}
+                                                   placeholder="firstName"
                                                    required="required" data-error="Password is required."/>
                                         </div>
+
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
-                                            <input type="password" name="confirmPassword" id="form_name"
-                                                   placeholder="Confirm Password"
+                                            <input type="lastName" onChange={handleInputChange} name="lastName"
+                                                   id="lastName"
+                                                   value={data.lastName}
+                                                   placeholder="lastName"
+                                                   required="required" data-error="newPassword is required."/>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div className="form-box">
+                                            <input type="text" name="phoneNumber" id="phoneNumber"
+                                                   value={data.phoneNumber}
+                                                   placeholder="Phone Number"
                                                    onChange={handleInputChange}
                                                    required="required" data-error="Confirm Password is required."/>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="form-box">
-                                            <input type="text" onChange={handleInputChange} name="firstName"
-                                                   id="firstName"
-                                                   required="required"
-                                                   placeholder="First Name" data-error="First name is required."/>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div className="reserve-book-btn text-center">
+                                            <button className="hvr-underline-from-center" type="save" id="register">SAVE
+                                            </button>
+
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="form-box">
-                                            <input type="text" onChange={handleInputChange} name="lastName"
-                                                   id="lastName"
-                                                   required="required"
-                                                   placeholder="Last Name"
-                                                   required="required" data-error="Last name is required."/>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div className="reserve-book-btn text-center">
+                                            <button className="hvr-underline-from-center" type="button"
+                                                    onClick={() => {
+                                                        goToChangePassword(props)
+                                                    }}>Change Password
+                                            </button>
+
+
+
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div className="reserve-book-btn text-center">
-                                            <button className="hvr-underline-from-center" type="submit" id="register">SUBMIT
-                                            </button>
-                                            &nbsp;&nbsp;&nbsp;
-                                            <span><a className="register-seller" href="#" onClick={registerAsSeller}>If you wanted to register as seller. Click here!</a></span>
-                                        </div>
-                                    </div>
+
                                 </form>
                             </div>
                         </div>
@@ -113,4 +132,5 @@ const Register = (props) => {
         </div>
     )
 };
-export default Register
+export default User
+

@@ -59,7 +59,7 @@ const Header = (props) => {
                                         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                                         <li>
                                             <a href="#" onClick={() => {
-                                                GoToPage(props,"/logout")
+                                                GoToPage(props,"/user")
                                             }}><img src={"images/my-profile.png"}/></a>
                                         </li>
 

@@ -17,6 +17,8 @@ import RegisterBusinessUser from "./components/RegisterBusinessUser";
 import {getCookie} from "./services/CookieService";
 import Logout from "./components/Logout";
 import ChangePassword from "./components/ChangePassword";
+import User from "./components/User";
+const cuser = "currentUser";
 import {RecipeConstant} from "./utilis/RecipeConstant";
 
 const App = () => {
