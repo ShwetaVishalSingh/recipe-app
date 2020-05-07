@@ -10,7 +10,7 @@
     "@babel/preset-env": "~7.7.1",
     "@babel/preset-react": "~7.7.0",
 	"parcel-bundler": "~1.12.4",
-    "bootstrap": "4.1.3",
+    "bootstrap": "4.4.1",
     "connected-react-router": "^6.8.0",
     "history": "latest",
     "images": "^3.0.2",
