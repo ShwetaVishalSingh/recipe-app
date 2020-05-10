@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import showNotification from "../utilis/Notifications";
 import {postData} from "../services/Ajax";
-import {setCookie} from "../services/CookieService";
-const cuser = "currentUser";
+import {getCookie, setCookie} from "../services/CookieService";
+import {RecipeConstant} from "../utilis/RecipeConstant";
 
 const goToRegisterPage = (props) => {
     return (
@@ -16,7 +16,13 @@ function notImplementedYet() {
 
 const Login = (props) => {
     const [data, setData] = useState({userName: "", password: ""});
+    useEffect(() => {
+        const cookie = getCookie(RecipeConstant.cuser);
+        if(cookie) {
+            return props.history.push("/home")
+        }
 
+    }, []);
     const handleInputChange = (event) => {
         const value = event.target.value;
         const name = event.target.name;
@@ -27,9 +33,12 @@ const Login = (props) => {
     const handlePostData = async (event) => {
         event.preventDefault();
         const response = await postData("/api/user/login", data);
+        console.log("response ", response)
+
         const result = await response.json();
+        console.log("result is ", result)
         if (response.status === 200) {
-            setCookie(cuser,data.userName )
+            setCookie(RecipeConstant.cuser,data.userName )
             showNotification("Login Successful", result.message, "success")
             props.history.push("/home")
             window.location.reload()

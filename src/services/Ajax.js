@@ -14,9 +14,10 @@ export async function getData(url = '') {
   return result.json(); // parses JSON response into native JavaScript objects
 };
 export async function postData(url = '', data = {}, isJson = false) {
-  const response = await fetch("" + url, {
+  //const response = await fetch("http://homemaderecipe.eu-central-1.elasticbeanstalk.com" + url, {
+  const response = await fetch("http://localhost:5003" + url, {
     method: 'POST',
-    // mode: 'cors', // no-cors, *cors, same-origin
+    //mode: 'cors', // no-cors, *cors, same-origin
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
     // credentials: 'same-origin', // include, *same-origin, omit
     headers: {
