@@ -52,7 +52,6 @@ const App = () => {
                     </Switch>
                 </Suspense>
             </BrowserRouter>
-        </div>
     );
 };
 export default App;
