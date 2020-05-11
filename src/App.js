@@ -18,7 +18,6 @@ import {getCookie} from "./services/CookieService";
 import Logout from "./components/Logout";
 import ChangePassword from "./components/ChangePassword";
 import User from "./components/User";
-const cuser = "currentUser";
 import {RecipeConstant} from "./utilis/RecipeConstant";
 
 const App = () => {
@@ -46,6 +45,7 @@ const App = () => {
                     {cookieCreated && <Route path="/createRecipe" component={CreateRecipe}/>}
                     {cookieCreated && <Route path="/contactus" component={ContactUs}/>}
                     {cookieCreated && <Route path="/changePassword" component={ChangePassword}/>}
+                    {cookieCreated && <Route path="/user" component={User}/>}
                     <Route path="/" component={Login}/>
 
 
