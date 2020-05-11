@@ -8,9 +8,15 @@ const goToChangePassword = (props) => {
         props.history.push("/changePassword")
     );
 };
+const goToLogout = (props) => {
+    return (
+        props.history.push("/logout")
+    );
+};
 
 const User = (props) => {
     const [data, setData] = useState([]);
+
 
 
     useEffect(() => {
@@ -115,6 +121,17 @@ const User = (props) => {
                                                     onClick={() => {
                                                         goToChangePassword(props)
                                                     }}>Change Password
+                                            </button>
+
+
+
+                                        </div>
+
+                                        <div className="reserve-book-btn text-center">
+                                            <button className="hvr-underline-from-center" type="button"
+                                                    onClick={() => {
+                                                        goToLogout(props)
+                                                    }}>Logout 
                                             </button>
 
 
