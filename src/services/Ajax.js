@@ -1,5 +1,6 @@
 export async function getData(url = '') {
-  const response = await fetch("" + url, {
+  //const response = await fetch("http://homemaderecipe.eu-central-1.elasticbeanstalk.com" + url, {
+  const response = await fetch("http://localhost:5003" + url, {
     method: 'GET',
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
     headers: {
