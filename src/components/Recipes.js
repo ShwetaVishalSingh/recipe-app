@@ -20,9 +20,6 @@ const Recipes = (props) => {
     const createRecipe = () => {
         props.history.push("/createRecipe")
     };
-    const addSeller = () => {
-        props.history.push("/addSeller")
-    };
     return (
         <div>
             <Header history={props.history}/>
