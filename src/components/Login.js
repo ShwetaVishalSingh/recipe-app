@@ -33,10 +33,7 @@ const Login = (props) => {
     const handlePostData = async (event) => {
         event.preventDefault();
         const response = await postData("/api/user/login", data);
-        console.log("response ", response)
-
         const result = await response.json();
-        console.log("result is ", result)
         if (response.status === 200) {
             setCookie(RecipeConstant.cuser,data.userName )
             showNotification("Login Successful", result.message, "success")

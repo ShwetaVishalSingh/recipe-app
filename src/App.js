@@ -1,5 +1,5 @@
 import React, {Suspense, useEffect, useState} from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import About from "./components/AboutUs";
 import Team from "./components/Team";
@@ -47,10 +47,10 @@ const App = () => {
                     <Route path="/" component={Login}/>
 
 
-                </Switch>
-            </Suspense>
-        </BrowserRouter>
-
+                    </Switch>
+                </Suspense>
+            </BrowserRouter>
+        </div>
     );
 };
 export default App;
