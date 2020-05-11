@@ -13,7 +13,7 @@ const Register = (props) => {
         const result = await response.json();
         if (response.status === 200) {
             props.history.push("/");
-            showNotification("User Registered!", "Welcome! " + result.firstName + " " + result.lastName, "success");
+            showNotification("User.js Registered!", "Welcome! " + result.firstName + " " + result.lastName, "success");
         } else {
             showNotification("Error!", result.errorMessage, "danger");
         }
