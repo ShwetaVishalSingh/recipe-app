@@ -119,10 +119,6 @@ const User = (props) => {
                                                 <span><a className="register-seller" href="#" onClick={() => {
                                                     handleChangePassword(props)
                                                 }}>Change Password</a></span>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <span><a className="register-seller" href="#" onClick={() => {
-                                                    handleLogout(props)
-                                                }}>Logout</a></span>
                                             </div>
                                         </div>
                                     </form>

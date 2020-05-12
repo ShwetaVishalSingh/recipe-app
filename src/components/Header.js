@@ -41,9 +41,6 @@ const Header = (props) => {
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/about")
                                         }}>About us</a></li>
-                                        <li><a  href="#" onClick={() => {
-                                            GoToPage(props,"/menu")
-                                        }}>Menu</a></li>
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/team")
                                         }}>Team</a></li>
@@ -60,15 +57,15 @@ const Header = (props) => {
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/contactus")
                                         }}>Contact us</a></li>
-                                        {/*<li><a href="#" onClick={() => {
-                                            GoToPage(props,"/changePassword")
-                                        }}>Change Password</a></li>*/}
-                                        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+
                                         <li>
                                             <a href="#" onClick={() => {
                                                 GoToPage(props,"/user/" + userId)
-                                            }}><img src={"/images/my-profile.png"}/></a>
+                                            }}><img src={"/images/my-profile.png"} alt="My Profile"/></a>
                                         </li>
+                                        <li><a href="#" onClick={() => {
+                                            GoToPage(props,"/logout")
+                                        }}><img src={"/images/logout.png"} alt="Logout"/></a></li>
 
                                     </ul>
                                 </div>
