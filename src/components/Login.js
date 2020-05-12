@@ -35,7 +35,7 @@ const Login = (props) => {
         const response = await postData("/api/user/login", data);
         const result = await response.json();
         if (response.status === 200) {
-            setCookie(RecipeConstant.cuser,data.userName )
+            setCookie(RecipeConstant.cuser,result.id )
             showNotification("Login Successful", result.message, "success")
             props.history.push("/home")
             window.location.reload()

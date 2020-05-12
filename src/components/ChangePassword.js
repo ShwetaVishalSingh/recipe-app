@@ -3,7 +3,7 @@ import showNotification from "../utilis/Notifications";
 import {postData} from "../services/Ajax";
 
 const ChangePassword = (props) => {
-    const [data, setData] = useState({userName: "", oldpassword: "", newPassword: "", confirmPassword:""});
+    const [data, setData] = useState({id: props.match.params.userId, oldPassword: "", newPassword: "", confirmPassword:""});
 
     const handlePostData = async (event) => {
         event.preventDefault();
@@ -45,18 +45,11 @@ const ChangePassword = (props) => {
 
                                 <form onSubmit={handlePostData} className="reservations-box"
                                       name="changePassword">
-                                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="form-box">
-                                            <input type="email" onChange={handleInputChange} name="userName"
-                                                   id="userName"
-                                                   placeholder="E-Mail ID"
-                                                   required="required" data-error="E-mail id is required."/>
-                                        </div>
-                                    </div>
+
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <input type="password" onChange={handleInputChange} name="oldPassword"
-                                                   id="password" placeholder="oldPassword"
+                                                   id="password" placeholder="Please enter current password"
                                                    required="required" data-error="Password is required."/>
                                         </div>
 
@@ -64,14 +57,14 @@ const ChangePassword = (props) => {
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <input type="password" onChange={handleInputChange} name="newPassword"
-                                                   id="password" placeholder="newPassword"
+                                                   id="password" placeholder="Please enter new password"
                                                    required="required" data-error="newPassword is required."/>
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div className="form-box">
                                             <input type="password" name="confirmPassword" id="form_name"
-                                                   placeholder="Confirm Password"
+                                                   placeholder="Please enter password again"
                                                    onChange={handleInputChange}
                                                    required="required" data-error="Confirm Password is required."/>
                                         </div>

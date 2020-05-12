@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, {useEffect, useState} from 'react';
+import {getCookie} from "../services/CookieService";
+import {RecipeConstant} from "../utilis/RecipeConstant";
 
 const GoToPage = (props, page) => {
     return (
@@ -7,6 +8,12 @@ const GoToPage = (props, page) => {
     );
 };
 const Header = (props) => {
+    const [userId, setUserId] = useState();
+    useEffect(() => {
+        const cookie = getCookie(RecipeConstant.cuser);
+        setUserId(cookie);
+    }, []);
+
     return (
         <div id="site-header">
             <header id="header" className="header-block-top">
@@ -59,8 +66,8 @@ const Header = (props) => {
                                         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                                         <li>
                                             <a href="#" onClick={() => {
-                                                GoToPage(props,"/user")
-                                            }}><img src={"images/my-profile.png"}/></a>
+                                                GoToPage(props,"/user/" + userId)
+                                            }}><img src={"/images/my-profile.png"}/></a>
                                         </li>
 
                                     </ul>

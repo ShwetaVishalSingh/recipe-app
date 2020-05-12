@@ -1,36 +1,33 @@
 import React, {useEffect, useState} from 'react';
 import showNotification from "../utilis/Notifications";
 import {getData, postData} from "../services/Ajax";
-import ChangePassword from "./ChangePassword";
 import Header from "./Header";
-
-const goToChangePassword = (props) => {
-    return (
-        props.history.push("/changePassword")
-    );
-};
-const goToLogout = (props) => {
-    return (
-        props.history.push("/logout")
-    );
-};
 
 const User = (props) => {
     const [data, setData] = useState([]);
-
-
-
+    const userId = props.match.params.userId;
     useEffect(() => {
         const fetchData = async () => {
             const response = await getData(
-                '/api/user/fd86071a-fb30-4078-b53f-f545ac7119d4'
+                '/api/user/' + userId
             );
             const result = await response;
             setData(result);
-            console.log(response)
         };
         fetchData();
     }, []);
+
+
+    const handleChangePassword = (props) => {
+        return (
+            props.history.push("/changePassword/" + userId)
+        );
+    };
+    const handleLogout = (props) => {
+        return (
+            props.history.push("/logout")
+        );
+    };
 
     const handlePostData = async (event) => {
         event.preventDefault();
@@ -58,7 +55,6 @@ const User = (props) => {
     return (
         <div>
             <Header history={props.history}/>
-
             <div id="signIn" className="banner full-screen-mode parallax">
                 <div className="gallery-main pad-top-100 pad-bottom-100">
                     <div className="container">
@@ -70,16 +66,14 @@ const User = (props) => {
                                             USER PROFILE
                                         </h2>
                                     </div>
-
-                                    <p>USER DETAILS</p>
-
                                     <form onSubmit={handlePostData} className="reservations-box"
                                           name="User">
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div className="form-box">
-                                                <input type="email" onChange={handleInputChange} name="userName"
+                                                <input type="email" name="userName"
                                                        id="userName"
                                                        value={data.userName}
+                                                       readOnly
                                                        placeholder="E-Mail ID"
                                                        required="required" data-error="E-mail id is required."/>
                                             </div>
@@ -122,27 +116,15 @@ const User = (props) => {
                                         </div>
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div className="reserve-book-btn text-center">
-                                                <button className="hvr-underline-from-center" type="button"
-                                                        onClick={() => {
-                                                            goToChangePassword(props)
-                                                        }}>Change Password
-                                                </button>
-
-
-                                            </div>
-
-                                            <div className="reserve-book-btn text-center">
-                                                <button className="hvr-underline-from-center" type="button"
-                                                        onClick={() => {
-                                                            goToLogout(props)
-                                                        }}>Logout
-                                                </button>
-
-
+                                                <span><a className="register-seller" href="#" onClick={() => {
+                                                    handleChangePassword(props)
+                                                }}>Change Password</a></span>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span><a className="register-seller" href="#" onClick={() => {
+                                                    handleLogout(props)
+                                                }}>Logout</a></span>
                                             </div>
                                         </div>
-
-
                                     </form>
                                 </div>
                             </div>
