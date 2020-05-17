@@ -15,9 +15,7 @@ const Gallery = (props) => {
                                     <h2 className="block-title text-center">
                                         Our Gallery
                                     </h2>
-                                    <p className="title-caption text-center">There are many variations of passages of
-                                        Lorem
-                                        Ipsum available </p>
+                                    <p className="title-caption text-center">Here you go with some pictures of our delicious recipes. </p>
                                 </div>
                                 <div className="gal-container clearfix">
                                     <div className="col-md-8 col-sm-12 co-xs-12 gal-item">

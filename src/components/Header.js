@@ -37,23 +37,25 @@ const Header = (props) => {
                                 </div>
                                 <div id="navbar" className="navbar-collapse collapse">
                                     <ul className="nav navbar-nav navbar-right">
-                                        <li className="active"><a  href="#" onClick={() => {GoToPage(props, "/home")}}>Home</a></li>
+                                        <li >
+                                            <a  href="#" onClick={() => {GoToPage(props, "/home")}}>Home</a>
+                                        </li>
                                         <li><a href="#" onClick={() => {
-                                            GoToPage(props,"/about")
-                                        }}>About us</a></li>
-                                        <li><a href="#" onClick={() => {
-                                            GoToPage(props,"/team")
-                                        }}>Team</a></li>
+                                            GoToPage(props,"/recipe")
+                                        }}>Recipe</a></li>
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/gallery")
                                         }}>Gallery</a></li>
                                         <li><a href="#" onClick={() => {
-                                            GoToPage(props,"/blog")
-                                        }}>Blog</a></li>
-                                        <li><a href="#" onClick={() => {
-                                            GoToPage(props,"/recipe")
-                                        }}>Recipe</a></li>
+                                            GoToPage(props,"/team")
+                                        }}>Team</a></li>
 
+                                     {/*   <li><a href="#" onClick={() => {
+                                            GoToPage(props,"/blog")
+                                        }}>Blog</a></li>*/}
+                                        <li><a href="#" onClick={() => {
+                                            GoToPage(props,"/about")
+                                        }}>About us</a></li>
                                         <li><a href="#" onClick={() => {
                                             GoToPage(props,"/contactus")
                                         }}>Contact us</a></li>

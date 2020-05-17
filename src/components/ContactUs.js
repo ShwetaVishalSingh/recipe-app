@@ -12,7 +12,7 @@ const ContactUs = (props) => {
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                                     <h2 className="ft-title color-white text-center"> Newsletter </h2>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                    <p> Enter your email and we will send you our weekly newsletter to you.</p>
                                 </div>
                                 <form>
                                     <input type="email" placeholder="Enter your e-mail id"/>
@@ -29,7 +29,7 @@ const ContactUs = (props) => {
                             <div className="footer-in-main">
                                 <div className="footer-logo">
                                     <div className="text-center">
-                                        <img src="images/logo.png" alt=""/>
+                                        {/*<img src="images/logo.png" alt=""/>*/}
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -79,10 +79,10 @@ const ContactUs = (props) => {
                                     <div className="footer-box-b">
                                         <h3>New Menu</h3>
                                         <ul>
-                                            <li><a href="#">Italian Bomba Sandwich</a></li>
-                                            <li><a href="#">Double Dose of Pork Belly</a></li>
-                                            <li><a href="#">Spicy Thai Noodles</a></li>
-                                            <li><a href="#">Triple Truffle Trotters</a></li>
+                                            <li><a href="#">Mutton Korma</a></li>
+                                            <li><a href="#">Gujarati Dhokla</a></li>
+                                            <li><a href="#">Bhindi Fry</a></li>
+                                            <li><a href="#">Hyderabadi Biryani</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -91,17 +91,17 @@ const ContactUs = (props) => {
                                         <h3>Contact Us</h3>
                                         <p>
                                             <i className="fa fa-map-signs" aria-hidden="true"></i>
-                                            <span>6 E Esplanade, St Albans VIC 3021, Australia</span>
+                                            <span>Örsvängen 9, Sundbyberg, 17451</span>
                                         </p>
                                         <p>
                                             <i className="fa fa-mobile" aria-hidden="true"></i>
                                             <span>
-									+91 80005 89080
+									+46 760390203
 								</span>
                                         </p>
                                         <p>
                                             <i className="fa fa-envelope" aria-hidden="true"></i>
-                                            <span><a href="#">support@foodfunday.com</a></span>
+                                            <span><a href="#">support@mumyumrecipes.com</a></span>
                                         </p>
                                     </div>
                                 </div>
@@ -111,12 +111,12 @@ const ContactUs = (props) => {
 
                                         <ul>
                                             <li>
-                                                <p>Monday - Thursday </p>
-                                                <span> 11:00 AM - 9:00 PM</span>
+                                                <p>Monday - Friday </p>
+                                                <span> 11:00 AM - 8:00 PM</span>
                                             </li>
                                             <li>
-                                                <p>Friday - Saturday </p>
-                                                <span>  11:00 AM - 5:00 PM</span>
+                                                <p>Saturday - Sunday </p>
+                                                <span>  11:00 AM - 10:00 PM</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -128,7 +128,7 @@ const ContactUs = (props) => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <h6 className="copy-title"> Copyright &copy; 2017 Food Funday is powered by <a
+                                    <h6 className="copy-title"> Copyright &copy; 2020 Mummy's Yummy Recipes is powered by <a
                                         href="#"
                                         target="_blank"></a>
                                     </h6>

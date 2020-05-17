@@ -14,9 +14,9 @@ const Team = (props) => {
                                 <h2 className="block-title text-center">
                                     Our Team
                                 </h2>
-                                <p className="title-caption text-center">There are many variations of passages of Lorem
+                                {/*<p className="title-caption text-center">There are many variations of passages of Lorem
                                     Ipsum available, but the majority have suffered alteration in some form, by injected
-                                    humour, or randomised words which don't look even slightly believable. </p>
+                                    humour, or randomised words which don't look even slightly believable. </p>*/}
                             </div>
                             <div className="team-box">
 
@@ -27,12 +27,8 @@ const Team = (props) => {
                                                 <a href="#"><img src="images/staff-01.jpg" alt=""/></a>
                                             </div>
                                             <div className="text-col">
-                                                <h3>John Doggett</h3>
-                                                <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                                                    Duis
-                                                    leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
-                                                    magna.
-                                                    Aenean commodo ligula.</p>
+                                                <h3>Vishal Singh</h3>
+                                                <p>Vishal is a people person with a passion for business and developing others! Vishal holds a Master degree in Computer Science and Engineering. He is also working as a Sr. Software Engineer within IT at several of Sweden's largest companies within tech and E-commerce.</p>
                                                 <ul className="team-social">
                                                     <li><a href="#"><i className="fa fa-facebook"
                                                                        aria-hidden="true"></i></a></li>
@@ -50,12 +46,8 @@ const Team = (props) => {
                                                 <a href="#"><img src="images/staff-02.jpg" alt=""/></a>
                                             </div>
                                             <div className="text-col">
-                                                <h3>Jeffrey Spender</h3>
-                                                <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                                                    Duis
-                                                    leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
-                                                    magna.
-                                                    Aenean commodo ligula.</p>
+                                                <h3>Vishal Singh</h3>
+                                                <p>Vishal is a people person with a passion for business and developing others! Vishal holds a Master degree in Computer Science and Engineering. He is also working as a Sr. Software Engineer within IT at several of Sweden's largest companies within tech and E-commerce.</p>
                                                 <ul className="team-social">
                                                     <li><a href="#"><i className="fa fa-facebook"
                                                                        aria-hidden="true"></i></a></li>
@@ -73,12 +65,66 @@ const Team = (props) => {
                                                 <a href="#"><img src="images/staff-03.jpg" alt=""/></a>
                                             </div>
                                             <div className="text-col">
-                                                <h3>Monica Reyes</h3>
-                                                <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                                                    Duis
-                                                    leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
-                                                    magna.
-                                                    Aenean commodo ligula.</p>
+                                                <h3>Shweta Singh</h3>
+                                                <p>Shweta is an energetic and curious person who loves all kinds of challenges and working with tech and business. Shweta holds a Bachelor's degree in Computer Science and Engineering from AKTU India, where, in addition to her studies, she was active in entrepreneurial organizations.</p>
+                                                <ul className="team-social">
+                                                    <li><a href="#"><i className="fa fa-facebook"
+                                                                       aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i className="fa fa-linkedin"
+                                                                       aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className="breakLine"/>
+                                    <div className="col-md-4 col-sm-6">
+                                        <div className="sf-team">
+                                            <div className="thumb">
+                                                <a href="#"><img src="images/staff-01.jpg" alt=""/></a>
+                                            </div>
+                                            <div className="text-col">
+                                                <h3>Vishal Singh</h3>
+                                                <p>Vishal is a people person with a passion for business and developing others! Vishal holds a Master degree in Computer Science and Engineering. He is also working as a Sr. Software Engineer within IT at several of Sweden's largest companies within tech and E-commerce.</p>
+                                                <ul className="team-social">
+                                                    <li><a href="#"><i className="fa fa-facebook"
+                                                                       aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i className="fa fa-linkedin"
+                                                                       aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-4 col-sm-6">
+                                        <div className="sf-team">
+                                            <div className="thumb">
+                                                <a href="#"><img src="images/staff-02.jpg" alt=""/></a>
+                                            </div>
+                                            <div className="text-col">
+                                                <h3>Vishal Singh</h3>
+                                                <p>Vishal is a people person with a passion for business and developing others! Vishal holds a Master degree in Computer Science and Engineering. He is also working as a Sr. Software Engineer within IT at several of Sweden's largest companies within tech and E-commerce.</p>
+                                                <ul className="team-social">
+                                                    <li><a href="#"><i className="fa fa-facebook"
+                                                                       aria-hidden="true"></i></a></li>
+                                                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    </li>
+                                                    <li><a href="#"><i className="fa fa-linkedin"
+                                                                       aria-hidden="true"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-4 col-sm-6">
+                                        <div className="sf-team">
+                                            <div className="thumb">
+                                                <a href="#"><img src="images/staff-03.jpg" alt=""/></a>
+                                            </div>
+                                            <div className="text-col">
+                                                <h3>Shweta Singh</h3>
+                                                <p>Shweta is an energetic and curious person who loves all kinds of challenges and working with tech and business. Shweta holds a Bachelor's degree in Computer Science and Engineering from AKTU India, where, in addition to her studies, she was active in entrepreneurial organizations.</p>
                                                 <ul className="team-social">
                                                     <li><a href="#"><i className="fa fa-facebook"
                                                                        aria-hidden="true"></i></a></li>

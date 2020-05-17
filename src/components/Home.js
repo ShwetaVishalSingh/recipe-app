@@ -2,6 +2,10 @@ import React from 'react'
 import Header from "./Header";
 
 const Home = (props) => {
+    function GoToPage(props, page) {
+        props.history.push(page)
+    }
+
     return (
         <div>
             <Header history={props.history}/>
@@ -11,23 +15,20 @@ const Home = (props) => {
                         <div className="banner-static">
                             <div className="banner-text">
                                 <div className="banner-cell">
-                                    <h1>Dinner with us <span className="typer" id="some-id" data-delay="200"
+                                    <h1>Order Delicious recipes from us for <span className="typer" id="some-id" data-delay="200"
                                                              data-delim=":"
-                                                             data-words="Friends:Family:Officemates"
+                                                             data-words="Friends & Family"
                                                              data-colors="red"></span><span className="cursor"
                                                                                             data-cursorDisplay="_"
                                                                                             data-owner="some-id"></span>
                                     </h1>
-                                    <h2>Accidental appearances </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy nibh
-                                        euismod</p>
+                                    <p>You choose... We are here to cook and deliver.</p>
                                     <div className="book-btn">
-                                        <a href="#reservation" className="table-btn hvr-underline-from-center">Book my
-                                            Table</a>
+                                        <a href="#reservation" className="table-btn hvr-underline-from-center"
+                                           onClick={() => {
+                                               GoToPage(props,"/recipe")
+                                           }}>Order Now</a>
                                     </div>
-                                    <a href="#about">
-                                        <div className="mouse"></div>
-                                    </a>
                                 </div>
                             </div>
                         </div>

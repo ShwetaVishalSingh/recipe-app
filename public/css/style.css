@@ -141,7 +141,9 @@ h5 a:hover,
 h6 a:hover {
     opacity: .8
 }
-
+hr {
+    clear:both;
+}
 ul, li, ol{
 	margin:0px;
 	padding:0px;

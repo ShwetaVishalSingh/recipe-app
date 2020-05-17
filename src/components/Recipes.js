@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Header from "./Header";
 import {getData} from "../services/Ajax";
+import  './Recipes.css'
 
 
 const Recipes = (props) => {
@@ -29,10 +30,7 @@ const Recipes = (props) => {
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                                <h2 className="block-title text-center">
-                                    Our Recipes
-                                </h2>
-                                <div className="reserve-book-btn text-right">
+                                 <div className="reserve-book-btn text-right">
 
                                     <button className="reserve-book-btn text-right hvr-underline-from-center" type="submit"
                                             onClick={createRecipe} id="submit">Add Recipe
@@ -52,8 +50,8 @@ const Recipes = (props) => {
                                                     <a href="#"><img src={item.image} alt=""/></a>
                                                 </div>
                                                 <div className="text-col">
-                                                    <h3>{item.recipeName}</h3>
-                                                    <p>{item.description}</p>
+                                                    <h3 className="single-line-truncate">{item.recipeName}</h3>
+                                                    <p className="multi-line-truncate">{item.description}</p>
 
                                                 </div>
                                             </div>
