@@ -31,10 +31,11 @@ const User = (props) => {
 
     const handlePostData = async (event) => {
         event.preventDefault();
-        const response = await postData("/api/user", data);
+        console.log(data)
+        const response = await postData("/api/user/" + userId, data);
         if (response.status === 200) {
             const result = await response.json();
-            props.history.push("/");
+            props.history.push("/user/" + userId);
             showNotification("Success", result.message, "success");
         } else {
             const result = await response.json();
@@ -82,7 +83,7 @@ const User = (props) => {
                                             <div className="form-box">
                                                 <input type="text" onChange={handleInputChange} name="firstName"
                                                        id="password"
-                                                       value={data.firstName}
+                                                       defaultValue={data.firstName}
                                                        placeholder="firstName"
                                                        required="required" data-error="Password is required."/>
                                             </div>
@@ -92,7 +93,7 @@ const User = (props) => {
                                             <div className="form-box">
                                                 <input type="lastName" onChange={handleInputChange} name="lastName"
                                                        id="lastName"
-                                                       value={data.lastName}
+                                                       defaultValue={data.lastName}
                                                        placeholder="lastName"
                                                        required="required" data-error="newPassword is required."/>
                                             </div>
@@ -100,7 +101,7 @@ const User = (props) => {
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div className="form-box">
                                                 <input type="text" name="phoneNumber" id="phoneNumber"
-                                                       value={data.phoneNumber}
+                                                       defaultValue={data.phoneNumber}
                                                        placeholder="Phone Number"
                                                        onChange={handleInputChange}
                                                        required="required" data-error="Confirm Password is required."/>
