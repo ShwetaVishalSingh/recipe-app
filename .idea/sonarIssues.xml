@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/main/java/com/recipe/se/recipes/domain/recipe/Recipe.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/main/java/com/recipe/se/recipes/domain/repository/UserDbRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/main/java/com/recipe/se/recipes/infrastructure/recipe/RecipeDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/main/java/com/recipe/se/recipes/infrastructure/rest/UserController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/main/java/com/recipe/se/recipes/infrastructure/user/UserDetails.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/main/java/com/recipe/se/recipes/infrastructure/user/UserUpdateModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RecipeRepo/Recipes/src/test/java/com/recipe/se/recipes/domain/TestPrimitiveAndWrapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/components/User.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
