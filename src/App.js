@@ -42,7 +42,7 @@ const App = () => {
                     {cookieCreated && <Route path="/gallery" component={Gallery}/>}
                     {cookieCreated && <Route path="/blog" component={Blog}/>}
                     {cookieCreated && <Route path="/recipe" component={Recipes}/>}
-                    {cookieCreated && <Route path="/createRecipe" component={CreateRecipe}/>}
+                    {cookieCreated && <Route path="/createRecipe/:userId" component={CreateRecipe}/>}
                     {cookieCreated && <Route path="/contactus" component={ContactUs}/>}
                     {cookieCreated && <Route path="/changePassword/:userId" component={ChangePassword}/>}
                     {cookieCreated && <Route path="/user/:userId" component={User}/>}

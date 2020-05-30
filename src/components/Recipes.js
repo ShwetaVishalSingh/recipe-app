@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import Header from "./Header";
 import {getData} from "../services/Ajax";
 import  './Recipes.css'
+import {getCookie} from "../services/CookieService";
+import {RecipeConstant} from "../utilis/RecipeConstant";
 
 
 const Recipes = (props) => {
@@ -14,12 +16,12 @@ const Recipes = (props) => {
             );
             const result = await response;
             setData(result.recipeList);
-            console.log(result)
         };
         fetchData();
     }, []);
     const createRecipe = () => {
-        props.history.push("/createRecipe")
+        const userId = getCookie(RecipeConstant.cuser);
+        props.history.push("/createRecipe/" + userId)
     };
     return (
         <div>

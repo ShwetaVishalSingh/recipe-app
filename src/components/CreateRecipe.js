@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Header from "./Header";
 import {postData} from "../services/Ajax";
 import showNotification from "../utilis/Notifications";
 
 const CreateRecipe = (props) => {
-    const [data, setData] = useState({recipeName: "", recipeImage: "", portion: 0, type: "", ingredients: "", description:"", cookingStep:""});
-
+    const [data, setData] = useState({recipeName: "", recipeImage: "", sellerId: props.match.params.userId, portion: 0, type: "", ingredients: "", description:"", cookingStep:""});
     const handlePostData = async (event) => {
         event.preventDefault();
         const response = await postData("/api/recipe/addRecipe", data);
@@ -35,11 +34,7 @@ const CreateRecipe = (props) => {
                         <div className="row">
                             <div className="form-reservations-box">
                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div className="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
-                                        <h2 className="block-title text-center">
-                                            Recipes
-                                        </h2>
-                                    </div>
+
                                     <form onSubmit={handlePostData} className="reservations-box"
                                           name="recipeForm">
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
